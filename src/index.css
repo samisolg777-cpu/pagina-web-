@@ -1,0 +1,141 @@
+/* src/index.css — estilos mínimos para que el ejemplo se vea decente */
+
+:root {
+  --tinta: #1f2430;
+  --suave: #6b7280;
+  --borde: #e5e7eb;
+  --acento: #4f46e5;
+  --fondo: #ffffff;
+  --ok: #15803d;
+  --alerta: #b91c1c;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--tinta);
+  background: var(--fondo);
+}
+
+* { box-sizing: border-box; }
+
+body { margin: 0; }
+
+.app { max-width: 720px; margin: 0 auto; padding: 24px 20px 64px; }
+
+/* ---------- Navbar ---------- */
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--borde);
+  margin-bottom: 32px;
+}
+
+.navbar-links, .navbar-sesion {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.nav-link {
+  padding: 6px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--suave);
+  font-size: 15px;
+}
+
+.nav-link:hover { color: var(--tinta); }
+
+/* Clase que aplica NavLink cuando isActive === true */
+.nav-link.activo {
+  background: var(--acento);
+  color: #fff;
+  font-weight: 600;
+}
+
+.navbar-usuario { font-size: 14px; color: var(--suave); }
+
+/* ---------- Páginas ---------- */
+.pagina h1 { margin: 0 0 8px; font-size: 28px; }
+.pagina p { line-height: 1.6; max-width: 62ch; }
+
+.meta { color: var(--suave); font-size: 14px; margin: 4px 0; }
+
+.precio-grande { font-size: 24px; font-weight: 700; }
+
+.acciones { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px; }
+
+/* ---------- Lista de productos ---------- */
+.lista-productos { list-style: none; padding: 0; display: grid; gap: 12px; }
+
+.tarjeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.tarjeta h2 { font-size: 17px; margin: 0; }
+.tarjeta h2 a { color: var(--tinta); text-decoration: none; }
+.tarjeta h2 a:hover { color: var(--acento); text-decoration: underline; }
+
+.tarjeta-precio { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; font-size: 14px; }
+
+.stock-ok { color: var(--ok); font-size: 13px; }
+.stock-agotado { color: var(--alerta); font-size: 13px; }
+
+/* ---------- Formulario ---------- */
+.formulario { display: grid; gap: 8px; max-width: 320px; margin-top: 20px; }
+.formulario label { font-size: 14px; color: var(--suave); }
+.formulario input {
+  padding: 10px 12px;
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  font-size: 15px;
+}
+.formulario input:focus-visible { outline: 2px solid var(--acento); outline-offset: 1px; }
+
+.error { color: var(--alerta); font-size: 14px; margin: 0; }
+
+/* ---------- Métricas del panel ---------- */
+.metricas { display: flex; gap: 32px; flex-wrap: wrap; margin: 24px 0; }
+.metricas dt { font-size: 13px; color: var(--suave); }
+.metricas dd { margin: 4px 0 0; font-size: 26px; font-weight: 700; }
+
+/* ---------- Botones ---------- */
+.boton-primario, .boton-secundario {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  text-decoration: none;
+  border: 1px solid transparent;
+  font-family: inherit;
+}
+
+.boton-primario { background: var(--acento); color: #fff; }
+.boton-primario:hover { background: #4338ca; }
+
+.boton-secundario { background: transparent; color: var(--tinta); border-color: var(--borde); }
+.boton-secundario:hover { border-color: var(--suave); }
+
+.boton-texto {
+  background: none;
+  border: none;
+  color: var(--suave);
+  cursor: pointer;
+  padding: 0;
+  font-size: 14px;
+  font-family: inherit;
+  margin-bottom: 12px;
+}
+.boton-texto:hover { color: var(--acento); }
+
+code { background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+
+:focus-visible { outline: 2px solid var(--acento); outline-offset: 2px; }
